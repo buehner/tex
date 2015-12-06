@@ -1,7 +1,6 @@
 %%
-% Deutsche LaTeX Briefvorlage von Jan-Philip Gehrcke
-% http://gehrcke.de -- jgehrcke@googlemail.com
-% November 2009, Aktualisierung Januar 2013
+% Entstanden auf der Basis von:
+% Deutsche LaTeX Briefvorlage von Jan-Philip Gehrcke - http://gehrcke.de
 %%
 
 \documentclass[
@@ -24,20 +23,10 @@
 
 \usepackage[T1]{fontenc}
 
-% Seitenlayout anpassen:
-%\usepackage{changepage}
-%\changepage{text height}{text width}{even-side margin}
-%{odd-side margin}{column sep.}
-%{topmargin}{headheight}{headsep}{footskip}
-%\changepage{+3cm}{}{}{}{}{5cm}{5cm}{}{-5cm}
-
-
 \begin{document}
 
 % KOPF
-\makeatletter\setkomavar{firsthead}{%
-  %\textbf{}\\
-  %\rule[1ex]{\textwidth}{.4pt}
+\makeatletter\setkomavar{firsthead}{
   \hspace*{\fill}\footnotesize
   \begin{tabular}{l@{}}
     \normalsize\usekomavar{fromname}\\
@@ -62,14 +51,15 @@
     \end{tabular}%
 }\makeatother
 
-% Anlagentext (Doppelpunkt wird automatisch gesetzt)
+% Anlagentext
 %\setkomavar*{enclseparator}{Anlage}
 
 % Trennzeichen bei Rücksendeadresse
-%\setkomavar{backaddressseparator}{ · }
 \setkomavar{backaddressseparator}{$\, \cdot \,$}
-\showfields{address}% Adressfenster anzeigen
-\setshowstyle{edges}% nur die Ecken markieren
+
+% Adressfensterdarstellung
+\showfields{address}
+\setshowstyle{edges}
 
 % Betreff, Datum, Ort:
 \setkomavar{subject}{Betreff: Kündigung des Vertrages}
@@ -85,7 +75,7 @@
 \opening{Sehr geehrte Damen und Herren,}
 
 hiermit kündige ich meinen Vertrag mit der Kundennummer \customer{} fristgerecht zum nächstmöglichen Zeitpunkt.
-Bitte senden Sie mir unter Angabe des Beendigungsdatums eine schriftliche Bestätigung der Kündigung zu.
+Bitte lassen Sie mir unter Angabe des Vertragsendes eine schriftliche Kündigungsbestätigung zukommen.
 
 \closing{Mit freundlichen Grüßen,}
 %\encl{Eine Anlage \\ Noch eine Anlage}
