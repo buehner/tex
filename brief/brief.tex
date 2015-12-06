@@ -6,6 +6,7 @@
 
 \documentclass[
     absender,
+    visualize,
     paper=a4,
     version=last,
     fontsize=11pt,
@@ -67,8 +68,8 @@
 % Trennzeichen bei Rücksendeadresse
 %\setkomavar{backaddressseparator}{ · }
 \setkomavar{backaddressseparator}{$\, \cdot \,$}
-%\showfields{address}% Adressfenster anzeigen
-%\setshowstyle{edges}% nur die Ecken markieren
+\showfields{address}% Adressfenster anzeigen
+\setshowstyle{edges}% nur die Ecken markieren
 
 % Betreff, Datum, Ort:
 \setkomavar{subject}{Betreff: Kündigung des Vertrages}
