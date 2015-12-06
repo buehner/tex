@@ -1,0 +1,79 @@
+%%
+% Deutsche LaTeX Briefvorlage von Jan-Philip Gehrcke
+% http://gehrcke.de -- jgehrcke@googlemail.com
+% November 2009, Aktualisierung Januar 2013
+%%
+
+\ProvidesFile{absender.lco}[letter-class-option file]
+
+% Symbole: Handy, Telefon, E-Mail
+\RequirePackage{marvosym}
+
+% Der Text in dieser Datei (absender.lco) ist UTF-8 enkodiert
+\RequirePackage[utf8]{inputenc}
+
+% Falls Farben gewuenscht sind...
+%\RequirePackage{color}
+
+% http://texdoc.net/texmf-dist/doc/latex/koma-script/scrguide.pdf
+\KOMAoptions{
+    foldmarks=true,
+    fromalign=right,
+    fromrule=off,
+    footsepline=off,
+    fromphone=false,
+    frommobilephone=true,
+    fromfax=false,
+    fromemail=true,
+    fromurl=false,
+    backaddress=plain,
+    refline=narrow
+}
+
+% ABSENDERDATEN
+\newcommand{\fromName}{Max Mustermann}
+\newcommand{\fromAddress}{Musterstr. 42\\54321 Stadt}
+\newcommand{\fromMobilePhone}{0123\,4567890}
+\newcommand{\fromPhone}{0987\,654321}
+\newcommand{\fromEmail}{mail@example.org}
+\newcommand{\fromUrl}{http://www.example.org}
+% Kundennummer
+\newcommand{\customer}{123456789}
+
+% Setze vertikalen Abstand der Kopfzeile/"oberen Rand"
+\@setplength{firstheadvpos}{1.2cm}
+
+% So kann man Farben definieren.
+%\definecolor{mygray}{gray}{.55}
+%\definecolor{myblue}{rgb}{0.25,0.45,0.75}
+
+% Absenderdaten:
+\setkomavar{fromname}{\fromName{}}
+\setkomavar{fromaddress}{\fromAddress{}}
+\setkomavar{frommobilephone}[\Mobilefone~]{\fromMobilePhone{}}
+\setkomavar{fromphone}[\Telefon~]{\fromPhone{}}
+\setkomavar{fromemail}[\Letter~]{\href{mailto:\fromEmail}{\fromEmail{}}}
+\setkomavar{fromurl}[\Info~]{\href{\fromUrl}{\fromUrl{}}}
+%\setkomavar{backaddress}{\usekomavar{fromname}\\\usekomavar{fromaddress}}
+\setkomavar{fromfax}[\Faxmachine~]{+49\,22\,112233}
+
+%reffields
+%\setkomavar{customer}{\customer{}}
+%\setkomavar{yourref}{Ihr Zeichen}
+%\setkomavar{yourmail}{Ihr Schreiben vom}
+%\setkomavar{myref}{Unser Zeichen}
+%\setkomavar{invoice}{Rechnungsnummer}
+
+% Optisches:
+%\setkomafont{fromname}{\color{black}}
+%\setkomafont{fromrule}{\color{black}}
+\setkomafont{fromaddress}{\small\mdseries}
+\setkomafont{addressee}{\small}
+
+
+\setkomavar{signature}{\usekomavar{fromname}}
+\renewcommand*{\raggedsignature}{\raggedright}
+
+% Definiere vertikalen Abstand vor der Unterschrift
+\@setplength{sigbeforevskip}{1.8cm}
+\endinput

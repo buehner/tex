@@ -1,0 +1,94 @@
+%%
+% Deutsche LaTeX Briefvorlage von Jan-Philip Gehrcke
+% http://gehrcke.de -- jgehrcke@googlemail.com
+% November 2009, Aktualisierung Januar 2013
+%%
+
+\documentclass[
+    absender,
+    paper=a4,
+    version=last,
+    fontsize=11pt,
+    DIV=13,
+    BCOR=0mm]{scrlttr2}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+
+\usepackage[hidelinks=true]{hyperref}
+
+% Definiere Grundschrift
+\usepackage[scaled=1.0]{helvet}
+\renewcommand*\familydefault{\sfdefault}
+
+\usepackage[T1]{fontenc}
+
+% Seitenlayout anpassen:
+%\usepackage{changepage}
+%\changepage{text height}{text width}{even-side margin}
+%{odd-side margin}{column sep.}
+%{topmargin}{headheight}{headsep}{footskip}
+%\changepage{+3cm}{}{}{}{}{5cm}{5cm}{}{-5cm}
+
+
+\begin{document}
+
+% KOPF
+\makeatletter\setkomavar{firsthead}{%
+  %\textbf{}\\
+  %\rule[1ex]{\textwidth}{.4pt}
+  \hspace*{\fill}\footnotesize
+  \begin{tabular}{l@{}}
+    \normalsize\usekomavar{fromname}\\
+    \usekomavar{fromaddress}\\\\
+
+    \if@phone
+      \usekomavar*{fromphone}\usekomavar{fromphone}\\
+    \fi
+
+    \if@mobilephone
+      \usekomavar*{frommobilephone}\usekomavar{frommobilephone}\\
+    \fi
+
+    \if@email
+      \usekomavar*{fromemail}\usekomavar{fromemail}\\
+    \fi
+
+    \if@www
+      \usekomavar*{fromurl}\usekomavar{fromurl}
+    \fi
+
+    \end{tabular}%
+}\makeatother
+
+% Anlagentext (Doppelpunkt wird automatisch gesetzt)
+\setkomavar*{enclseparator}{Anlage}
+
+% Trennzeichen bei Rücksendeadresse
+%\setkomavar{backaddressseparator}{ · }
+\setkomavar{backaddressseparator}{$\, \cdot \,$}
+%\showfields{address}% Adressfenster anzeigen
+%\setshowstyle{edges}% nur die Ecken markieren
+
+% Betreff, Datum, Ort:
+\setkomavar{subject}{Betreff: Kündigung des Vertrages}
+\setkomavar{date}{\today}
+\setkomavar{place}{Ort}
+
+% Definiere Brief und Empfaenger 1:
+\begin{letter}{
+    Unternehmen GmbH\\
+    Musterstr. 1\\
+    12345 Irgendwo
+}
+\opening{Sehr geehrte Damen und Herren,}
+
+hiermit kündige ich meinen Vertrag mit der Kundennummer \customer{} fristgerecht zum nächstmöglichen Zeitpunkt.
+Bitte senden Sie mir unter Angabe des Beendigungsdatums eine schriftliche Bestätigung der Kündigung zu.
+
+\closing{Mit freundlichen Grüßen,}
+%\encl{Eine Anlage}
+\end{letter}
+
+
+\end{document}
