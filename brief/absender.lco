@@ -42,6 +42,7 @@
 
 % Setze vertikalen Abstand der Kopfzeile/"oberen Rand"
 \@setplength{firstheadvpos}{1.2cm}
+\@setplength{toaddrindent}{4mm}
 
 % So kann man Farben definieren.
 %\definecolor{mygray}{gray}{.55}
