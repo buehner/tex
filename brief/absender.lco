@@ -1,7 +1,6 @@
 %%
-% Deutsche LaTeX Briefvorlage von Jan-Philip Gehrcke
-% http://gehrcke.de -- jgehrcke@googlemail.com
-% November 2009, Aktualisierung Januar 2013
+% Entstanden auf der Basis von:
+% Deutsche LaTeX Briefvorlage von Jan-Philip Gehrcke - http://gehrcke.de
 %%
 
 \ProvidesFile{absender.lco}[letter-class-option file]
