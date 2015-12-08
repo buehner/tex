@@ -20,6 +20,11 @@
 \usepackage[scaled=1.0]{helvet}
 \renewcommand*\familydefault{\sfdefault}
 
+% Betreff / Empfänger
+\newcommand{\subject}{Betreff: Kündigung des Vertrages}
+\newcommand{\location}{Musterstadt} % Ort für das Datum
+\newcommand{\recipient}{Unternehmen GmbH\\Musterstr. 1\\12345 Irgendwo}
+
 \begin{document}
 
 % KOPF
@@ -59,16 +64,13 @@
 \setshowstyle{edges}
 
 % Betreff, Datum, Ort:
-\setkomavar{subject}{Betreff: Kündigung des Vertrages}
+\setkomavar{subject}{\subject{}}
 \setkomavar{date}{\today}
-\setkomavar{place}{Ort}
+\setkomavar{place}{\location{}}
 
-% Definiere Brief und Empfaenger 1:
-\begin{letter}{
-    Unternehmen GmbH\\
-    Musterstr. 1\\
-    12345 Irgendwo
-}
+% Definiere Brief und Empfänger:
+\begin{letter}{\recipient{}}
+
 \opening{Sehr geehrte Damen und Herren,}
 
 hiermit kündige ich meinen Vertrag mit der Kundennummer \customer{} fristgerecht zum nächstmöglichen Zeitpunkt.
