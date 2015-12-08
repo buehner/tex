@@ -55,7 +55,7 @@
 \setkomavar{fromphone}[\Telefon~]{\fromPhone{}}
 \setkomavar{fromemail}[\Letter~]{\href{mailto:\fromEmail}{\fromEmail{}}}
 \setkomavar{fromurl}[\Info~]{\href{\fromUrl}{\fromUrl{}}}
-%\setkomavar{backaddress}{\usekomavar{fromname}\\\usekomavar{fromaddress}}
+\setkomavar{backaddress}{\centerline{\usekomavar{fromname}\\\usekomavar{fromaddress}}}
 \setkomavar{fromfax}[\Faxmachine~]{+49\,22\,112233}
 
 %reffields
